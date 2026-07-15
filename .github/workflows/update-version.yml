@@ -40,10 +40,10 @@ jobs:
         env:
           VER: ${{ steps.rel.outputs.version }}
         run: |
-          # Replace X.Y.Z after the English and Korean version labels in both files.
-          perl -0pi -e "s/(Latest release: v)\\d+\\.\\d+\\.\\d+/\${1}$ENV{VER}/g;
-                        s/(최신 릴리스: v)\\d+\\.\\d+\\.\\d+/\${1}$ENV{VER}/g" \
-            index.html assets/js/i18n.js
+          # Replace the version token right after the EN/KO "…v" labels in both files.
+          # Single-quote the Perl program so bash does NOT expand $ENV{VER} / ${1};
+          # Perl reads VER from the environment. [^"<\s]+ also self-heals a bad token.
+          perl -i -pe 's/(Latest release: v)[^"<\s]+/${1}$ENV{VER}/g; s/(최신 릴리스: v)[^"<\s]+/${1}$ENV{VER}/g' index.html assets/js/i18n.js
 
       - name: Commit if changed
         run: |
