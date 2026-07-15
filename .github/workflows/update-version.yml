@@ -30,7 +30,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          VER=$(gh release view --repo countnine/LyricsX-Windows --json tagName --jq .tagName)
+          # Use the same definition as the download links (/releases/latest):
+          # the newest published, non-draft, non-prerelease release.
+          VER=$(gh api repos/countnine/LyricsX-Windows/releases/latest --jq .tag_name)
           VER=${VER#v}   # normalize: drop a leading "v" if present
           if [ -z "$VER" ]; then echo "Could not resolve version"; exit 1; fi
           echo "version=$VER" >> "$GITHUB_OUTPUT"
