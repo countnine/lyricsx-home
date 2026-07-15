@@ -1,0 +1,58 @@
+name: Sync latest release version
+
+# Keeps the version label shown on the site ("Latest release: vX.Y.Z") in sync
+# with the newest release of the app repo (countnine/LyricsX-Windows).
+# The download buttons already point at /releases/latest/download/... so they
+# never need editing — this only refreshes the displayed version string.
+
+on:
+  schedule:
+    - cron: '0 6 * * *'      # daily at 06:00 UTC (fallback)
+  workflow_dispatch: {}       # run manually from the Actions tab
+  repository_dispatch:        # optional: instant update when the app repo fires it
+    types: [release-published]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-version
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest release tag from the app repo
+        id: rel
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VER=$(gh release view --repo countnine/LyricsX-Windows --json tagName --jq .tagName)
+          VER=${VER#v}   # normalize: drop a leading "v" if present
+          if [ -z "$VER" ]; then echo "Could not resolve version"; exit 1; fi
+          echo "version=$VER" >> "$GITHUB_OUTPUT"
+          echo "Latest app release: v$VER"
+
+      - name: Rewrite displayed version strings
+        env:
+          VER: ${{ steps.rel.outputs.version }}
+        run: |
+          # Replace X.Y.Z after the English and Korean version labels in both files.
+          perl -0pi -e "s/(Latest release: v)\\d+\\.\\d+\\.\\d+/\${1}$ENV{VER}/g;
+                        s/(최신 릴리스: v)\\d+\\.\\d+\\.\\d+/\${1}$ENV{VER}/g" \
+            index.html assets/js/i18n.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Already up to date — nothing to commit."
+          else
+            git commit -m "Sync displayed version to v${{ steps.rel.outputs.version }}"
+            git push
+          fi
