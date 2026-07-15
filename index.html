@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LyricsX for Windows — Real-time bilingual lyrics on your desktop</title>
+  <meta name="description" content="LyricsX automatically finds, syncs and translates the lyrics of whatever you're playing — right on your Windows desktop. Free and open source." />
+  <meta property="og:title" content="LyricsX for Windows" />
+  <meta property="og:description" content="Real-time, bilingual lyrics on your Windows desktop. Free and open source." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <img src="assets/img/icon.png" alt="LyricsX icon" width="32" height="32" />
+      <span>LyricsX <em>for Windows</em></span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="#features" data-i18n="nav.features">Features</a>
+      <a class="nav-link" href="#download" data-i18n="nav.download">Download</a>
+      <a class="nav-link" href="https://github.com/countnine/LyricsX-Windows" target="_blank" rel="noopener">GitHub</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ko">KO</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="badge" data-i18n="hero.badge">Free &amp; Open Source</span>
+        <h1 data-i18n="hero.title">Real-time, bilingual lyrics on your Windows desktop</h1>
+        <p class="lead" data-i18n="hero.subtitle">LyricsX automatically finds the lyrics of whatever you're playing, syncs them line by line, and shows the original alongside a translation — right on your desktop.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/countnine/LyricsX-Windows/releases/latest" target="_blank" rel="noopener">
+            <span data-i18n="hero.download">Download for Windows</span>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/countnine/LyricsX-Windows" target="_blank" rel="noopener" data-i18n="hero.source">View source</a>
+        </div>
+        <p class="hero-meta" data-i18n="hero.meta">Free · Windows 10 (2004+) / 11 · No .NET install required</p>
+      </div>
+
+      <!-- CSS overlay mockup -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mock-desktop">
+          <div class="mock-glow"></div>
+          <div class="mock-overlay">
+            <p class="mock-line mock-original"><span class="mock-fill">Never gonna give you</span> up</p>
+            <p class="mock-line mock-translation">널 절대 포기하지 않을 거야</p>
+          </div>
+          <div class="mock-taskbar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section id="features" class="section">
+      <h2 class="section-title" data-i18n="features.title">Everything you need to sing along</h2>
+      <div class="feature-grid">
+        <article class="card">
+          <div class="card-icon">🎵</div>
+          <h3 data-i18n="feat.detect.title">Automatic playback detection</h3>
+          <p data-i18n="feat.detect.desc">Built on Windows SMTC. Works with Spotify, Apple Music, YouTube Music and any player that supports media keys.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🔎</div>
+          <h3 data-i18n="feat.search.title">Multi-source lyrics search</h3>
+          <p data-i18n="feat.search.desc">Searches LRCLIB and NetEase, then auto-picks the best match using quality ranking.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🌐</div>
+          <h3 data-i18n="feat.bilingual.title">Bilingual display</h3>
+          <p data-i18n="feat.bilingual.desc">Shows the original line with its translation stacked below, so you can follow both at once.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">✨</div>
+          <h3 data-i18n="feat.deepl.title">DeepL translation fallback</h3>
+          <p data-i18n="feat.deepl.desc">When a source has no translation, DeepL machine-translates on the fly — bring your own free API key.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🖥️</div>
+          <h3 data-i18n="feat.overlay.title">Desktop overlay</h3>
+          <p data-i18n="feat.overlay.desc">Transparent, click-through, always on top. Karaoke-style progress fill and drag to reposition.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">💾</div>
+          <h3 data-i18n="feat.cache.title">Offline cache</h3>
+          <p data-i18n="feat.cache.desc">Found lyrics and translations are stored in SQLite for instant, offline display on replay.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">⚙️</div>
+          <h3 data-i18n="feat.tray.title">Tray controls</h3>
+          <p data-i18n="feat.tray.desc">Toggle the overlay, nudge sync offset by ±0.5s, search manually, and launch on startup.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🔄</div>
+          <h3 data-i18n="feat.update.title">Automatic updates</h3>
+          <p data-i18n="feat.update.desc">Delta updates via Velopack keep you on the latest version automatically.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Demo ===== -->
+    <section id="demo" class="section demo">
+      <h2 class="section-title" data-i18n="demo.title">See it in action</h2>
+      <p class="section-sub" data-i18n="demo.sub">Lyrics fade in over your desktop and fill line by line as the song plays.</p>
+      <figure class="demo-figure">
+        <img src="assets/img/demo.png" alt="LyricsX bilingual lyrics overlay on the Windows desktop" loading="lazy" />
+      </figure>
+    </section>
+
+    <!-- ===== Download ===== -->
+    <section id="download" class="section download">
+      <h2 class="section-title" data-i18n="download.title">Get LyricsX</h2>
+      <p class="section-sub" data-i18n="download.version">Latest release: v0.8.0</p>
+      <div class="download-row">
+        <a class="download-card primary" href="https://github.com/countnine/LyricsX-Windows/releases/latest" target="_blank" rel="noopener">
+          <span class="download-title" data-i18n="download.setup">Download Installer</span>
+          <span class="download-desc" data-i18n="download.setup.desc">Setup.exe · recommended · auto-updates</span>
+        </a>
+        <a class="download-card" href="https://github.com/countnine/LyricsX-Windows/releases/latest" target="_blank" rel="noopener">
+          <span class="download-title" data-i18n="download.portable">Portable ZIP</span>
+          <span class="download-desc" data-i18n="download.portable.desc">No install · run from anywhere</span>
+        </a>
+      </div>
+      <p class="download-req" data-i18n="download.req">Windows 10 20H1 (2004) or later / Windows 11. Self-contained — no .NET installation required.</p>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-built" data-i18n="footer.built">A Windows native rewrite of the macOS app LyricsX.</p>
+      <p class="footer-links">
+        <a href="https://github.com/countnine/LyricsX-Windows" target="_blank" rel="noopener">GitHub</a>
+        <span class="dot">·</span>
+        <a href="https://github.com/ddddxxx/LyricsX" target="_blank" rel="noopener" data-i18n="footer.original">Original LyricsX</a>
+        <span class="dot">·</span>
+        <span data-i18n="footer.license">Licensed under GPLv3</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>
