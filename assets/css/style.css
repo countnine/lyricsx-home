@@ -298,6 +298,9 @@ main, .site-header, .site-footer { position: relative; z-index: 1; }
 .download-card.primary .download-title { color: var(--accent); }
 .download-desc { font-size: 0.85rem; color: var(--text-dim); }
 .download-req { font-size: 0.85rem; color: var(--text-dim); max-width: 52ch; margin: 0 auto; }
+.download-all { margin: 14px 0 0; font-size: 0.9rem; }
+.download-all a { color: var(--accent); }
+.download-all a:hover { text-decoration: underline; }
 
 /* ===== Footer ===== */
 .site-footer {

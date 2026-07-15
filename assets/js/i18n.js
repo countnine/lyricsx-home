@@ -48,6 +48,7 @@
       "download.portable": "Portable ZIP",
       "download.portable.desc": "No install · run from anywhere",
       "download.req": "Windows 10 20H1 (2004) or later / Windows 11. Self-contained — no .NET installation required.",
+      "download.all": "All versions & release notes →",
 
       "footer.built": "A Windows native rewrite of the macOS app LyricsX.",
       "footer.original": "Original LyricsX",
@@ -92,6 +93,7 @@
       "download.portable": "포터블 ZIP",
       "download.portable.desc": "설치 불필요 · 어디서나 실행",
       "download.req": "Windows 10 20H1(2004) 이상 / Windows 11. self-contained — .NET 설치가 필요 없습니다.",
+      "download.all": "모든 버전 · 릴리스 노트 →",
 
       "footer.built": "macOS 앱 LyricsX의 Windows 네이티브 재작성판입니다.",
       "footer.original": "원본 LyricsX",

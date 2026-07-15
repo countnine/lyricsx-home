@@ -46,8 +46,33 @@ as in production.
 
 ## Updating content
 
-- **New release / version:** update `download.version` in `assets/js/i18n.js`
-  (both `en` and `ko`) and the default text in `index.html`.
-- **Download links** point at `.../releases/latest`, so they don't need per-release edits.
-- **Screenshot:** `assets/img/demo.png` is a real Windows capture of the overlay
-  (`LyricsX.exe --demo`). Recapture the same way to refresh it.
+- **Download links** point directly at the latest installer via
+  `.../releases/latest/download/LyricsX-win-Setup.exe` (and `...-Portable.zip`),
+  so they always serve the newest build with no per-release edits.
+- **Displayed version** ("Latest release: vX.Y.Z") is refreshed automatically by
+  the `Sync latest release version` GitHub Actions workflow — see below.
+- **Demo:** `assets/img/demo.gif` is a real Windows capture of the karaoke fill
+  (`LyricsX.exe --demo`, ~4s loop). Recapture the same way to refresh it.
+
+## Auto-syncing the version label (.github/workflows/update-version.yml)
+
+The workflow reads the newest release tag of `countnine/LyricsX-Windows` and
+rewrites the `Latest release: vX.Y.Z` string in `index.html` and `assets/js/i18n.js`,
+committing only when it changes (which re-triggers the Pages build).
+
+Triggers:
+- **Daily** at 06:00 UTC (fallback) and **manually** from the Actions tab.
+- **Instant (optional):** have the app repo's release workflow fire a
+  `repository_dispatch` of type `release-published` at this repo. That needs a PAT
+  with `contents:write` on this repo stored as a secret in the app repo; without it,
+  the daily/manual runs still keep the label current.
+
+## Making this repo private?
+
+GitHub Pages serves a site from a **private** repo only on a **paid** plan
+(Pro/Team/Enterprise). On the **Free** plan, switching this repo to private
+**unpublishes** the live site. Note that even on paid plans the published page stays
+publicly viewable (private *source* ≠ private *site*). If you want to keep the source
+private but the site free and public, deploy the same repo through
+**Cloudflare Pages** or **Netlify** instead — both build from a private GitHub repo
+at no cost.
