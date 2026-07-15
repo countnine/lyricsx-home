@@ -17,7 +17,6 @@
       "hero.title": "Real-time, bilingual lyrics on your Windows desktop",
       "hero.subtitle": "LyricsX automatically finds the lyrics of whatever you're playing, syncs them line by line, and shows the original alongside a translation — right on your desktop.",
       "hero.download": "Download for Windows",
-      "hero.source": "View source",
       "hero.meta": "Free · Windows 10 (2004+) / 11 · No .NET install required",
 
       "features.title": "Everything you need to sing along",
@@ -62,7 +61,6 @@
       "hero.title": "Windows 데스크톱에 실시간 이중언어 가사를",
       "hero.subtitle": "LyricsX는 재생 중인 곡의 가사를 자동으로 찾아 한 줄씩 동기화하고, 원문과 번역을 함께 데스크톱에 표시합니다.",
       "hero.download": "Windows용 다운로드",
-      "hero.source": "소스 보기",
       "hero.meta": "무료 · Windows 10 (2004+) / 11 · .NET 설치 불필요",
 
       "features.title": "따라 부르는 데 필요한 모든 것",
