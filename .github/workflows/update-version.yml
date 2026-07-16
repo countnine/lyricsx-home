@@ -1,7 +1,7 @@
 name: Sync latest release version
 
 # Keeps the version label shown on the site ("Latest release: vX.Y.Z") in sync
-# with the newest release of the app repo (countnine/LyricsX-Windows).
+# with the newest release of the app repo (countnine/musebase).
 # The download buttons already point at /releases/latest/download/... so they
 # never need editing — this only refreshes the displayed version string.
 
@@ -32,7 +32,7 @@ jobs:
         run: |
           # Use the same definition as the download links (/releases/latest):
           # the newest published, non-draft, non-prerelease release.
-          VER=$(gh api repos/countnine/LyricsX-Windows/releases/latest --jq .tag_name)
+          VER=$(gh api repos/countnine/musebase/releases/latest --jq .tag_name)
           VER=${VER#v}   # normalize: drop a leading "v" if present
           if [ -z "$VER" ]; then echo "Could not resolve version"; exit 1; fi
           echo "version=$VER" >> "$GITHUB_OUTPUT"

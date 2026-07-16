@@ -1,10 +1,10 @@
-# LyricsX for Windows — Landing Page
+# Musebase for Windows — Landing Page
 
-Static marketing/landing site for [**LyricsX for Windows**](https://github.com/countnine/LyricsX-Windows),
+Static marketing/landing site for [**Musebase for Windows**](https://github.com/countnine/musebase),
 a Windows app that finds, syncs and translates the lyrics of whatever you're playing.
 
 > This repository contains **only the website**. The app source lives in
-> [`countnine/LyricsX-Windows`](https://github.com/countnine/LyricsX-Windows).
+> [`countnine/musebase`](https://github.com/countnine/musebase).
 
 ## Stack
 
@@ -37,26 +37,26 @@ as in production.
 
 ## Deploy (GitHub Pages)
 
-1. Push this repository to GitHub (e.g. `countnine/lyricsx-home`).
+1. Push this repository to GitHub (e.g. `countnine/musebase-home`).
 2. **Settings → Pages → Build and deployment → Source:** `Deploy from a branch`,
    branch `main`, folder `/ (root)`.
-3. The site publishes at `https://countnine.github.io/lyricsx-home/`.
+3. The site publishes at `https://countnine.github.io/musebase-home/`.
    All asset paths are relative, so it works from that sub-path.
 4. *(Optional)* Add a `CNAME` file to use a custom domain.
 
 ## Updating content
 
 - **Download links** point directly at the latest installer via
-  `.../releases/latest/download/LyricsX-win-Setup.exe` (and `...-Portable.zip`),
+  `.../releases/latest/download/Musebase-win-Setup.exe` (and `...-Portable.zip`),
   so they always serve the newest build with no per-release edits.
 - **Displayed version** ("Latest release: vX.Y.Z") is refreshed automatically by
   the `Sync latest release version` GitHub Actions workflow — see below.
 - **Demo:** `assets/img/demo.gif` is a real Windows capture of the karaoke fill
-  (`LyricsX.exe --demo`, ~4s loop). Recapture the same way to refresh it.
+  (`Musebase.exe --demo`, ~4s loop). Recapture the same way to refresh it.
 
 ## Auto-syncing the version label (.github/workflows/update-version.yml)
 
-The workflow reads the newest release tag of `countnine/LyricsX-Windows` and
+The workflow reads the newest release tag of `countnine/musebase` and
 rewrites the `Latest release: vX.Y.Z` string in `index.html` and `assets/js/i18n.js`,
 committing only when it changes (which re-triggers the Pages build).
 
