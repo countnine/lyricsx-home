@@ -33,6 +33,7 @@ jobs:
           # Use the same definition as the download links (/releases/latest):
           # the newest published, non-draft, non-prerelease release.
           VER=$(gh api repos/countnine/musebase/releases/latest --jq .tag_name)
+          VER=${VER#windows-}   # platform-prefixed tag scheme (ADR-0003): windows-vX.Y.Z
           VER=${VER#v}   # normalize: drop a leading "v" if present
           if [ -z "$VER" ]; then echo "Could not resolve version"; exit 1; fi
           echo "version=$VER" >> "$GITHUB_OUTPUT"
