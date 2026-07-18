@@ -41,7 +41,7 @@
       "demo.sub": "Lyrics fade in over your desktop and fill line by line as the song plays.",
 
       "download.title": "Get Musebase",
-      "download.version": "Latest release: v0.12.0",
+      "download.version": "Latest release: v0.13.0",
       "download.setup": "Download Installer",
       "download.setup.desc": "Setup.exe · recommended · auto-updates",
       "download.portable": "Portable ZIP",
@@ -85,7 +85,7 @@
       "demo.sub": "곡이 재생되면 가사가 데스크톱 위로 페이드 인 되며 한 줄씩 채워집니다.",
 
       "download.title": "Musebase 받기",
-      "download.version": "최신 릴리스: v0.12.0",
+      "download.version": "최신 릴리스: v0.13.0",
       "download.setup": "설치 프로그램 다운로드",
       "download.setup.desc": "Setup.exe · 권장 · 자동 업데이트",
       "download.portable": "포터블 ZIP",
